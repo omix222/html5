@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script type="text/javascript">
+window.onload = function(){
+
+document.getElementById("level1").addEventListener("click",function(){
+    alert("listener at level1");
+},false);
+
+ var customEvent = new Event('click');
+
+ document.getElementById('level1').dispatchEvent(customEvent);
+ 
+
+
+}
+
+</script>
+    </head>
+<body>
+    <div id="level1">
+        click at level1
+    </div>
+</body>
+</html>
