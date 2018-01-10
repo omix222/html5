@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8">
-    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-    <title>位置情報取得サンプル</title>
+<meta charset="utf-8">
+<title>位置情報取得サンプル</title>
 </head>
 
 <body>
-    <h1>位置情報取得サンプル</h1>
+	<h1>位置情報取得サンプル</h1>
+	<p id='result'></p>
 
-    <textarea id="result" rows="10" cols="50" name="40"></textarea>
-    <script>
-
+	<script>
         // Geolocation APIに対応している
         if (navigator.geolocation) {
             alert("この端末では位置情報が取得できます");
@@ -27,10 +24,12 @@
             navigator.geolocation.getCurrentPosition(
                 // 取得成功した場合
                 function (position) {
-                    $(function () {
                         //alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
-                        $('#result').val("緯度:" + position.coords.latitude + ",経度" + position.coords.longitude);
-                    });
+                        //$('#result').val("緯度:" + position.coords.latitude + ",経度" + position.coords.longitude);
+                	    var p = document.getElementById('result');
+                	    var div = document.createElement('div');
+                	    div.textContent = "緯度:" + position.coords.latitude + ",経度" + position.coords.longitude;
+                	    p.appendChild(div);
                 },
                 // 取得失敗した場合
                 function (error) {
@@ -53,7 +52,7 @@
         }
 
     </script>
-    <button onclick="getPosition();">位置情報を取得する</button>
+	<button onclick="getPosition();">位置情報を取得する</button>
+	
 </body>
-
 </html>
