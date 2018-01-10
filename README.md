@@ -1,4 +1,4 @@
 # html5
 
-* Github pegesリンク
+* GitHub Pagesリンク
     * https://omix222.github.io/html5/
